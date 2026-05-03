@@ -27,8 +27,8 @@ metadata:
   name: service-course-akhil
 spec:
   ports:
-    - port: 80          # external port for ALB
-      targetPort: 3001  # forwards to container port
+    - port: 80         
+      targetPort: 3001  
       protocol: TCP
   type: NodePort
   selector:
@@ -53,4 +53,4 @@ spec:
             service:
               name: service-course-akhil
               port:
-                number: 80   # must match Service port
+                number: 80   
