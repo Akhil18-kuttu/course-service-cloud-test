@@ -5,7 +5,7 @@ env:
     AWS_REGION: "ap-south-2"
     ACCOUNT_ID: "991524241826"
     ECR_REGISTRY: "991524241826.dkr.ecr.ap-south-2.amazonaws.com"
-    ECR_REPO: "991524241826.dkr.ecr.ap-south-2.amazonaws.com/student-service"
+    ECR_REPO: "991524241826.dkr.ecr.ap-south-2.amazonaws.com/course-repo/akhil"
 
 phases:
   pre_build:
