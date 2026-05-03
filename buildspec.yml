@@ -2,7 +2,7 @@ version: 0.2
  
 env:
   variables:
-    AWS_REGION: "<region>"
+    AWS_REGION: "ap-south-2"
     ECR_REPO:
      "991524241826.dkr.ecr.ap-south-2.amazonaws.com/course-repo/akhil"
  
@@ -15,13 +15,12 @@ phases:
       - export IMAGE_TAG=latest
   build:
     commands:
-      - cd day2-microservices/student-service
       - docker build -t $ECR_REPO:$IMAGE_TAG .
       - docker tag $ECR_REPO:$IMAGE_TAG $ECR_REPO:latest
   post_build:
     commands:
       - docker push $ECR_REPO:$IMAGE_TAG
-      - printf '[{"name":"student-service",
+      - printf '[{"name":"course-service",
           "imageUri":"%s"}]' \
           $ECR_REPO:$IMAGE_TAG > imagedefinitions.json
  
